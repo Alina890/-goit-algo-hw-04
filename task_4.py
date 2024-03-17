@@ -11,7 +11,7 @@ def add_contact(args, contacts):
             contacts[name] = phone 
             return "Contact added."
         else:
-            print ("Перевірте вірність введених даних")
+            return "Перевірте вірність введених даних"
       
 
 def change_contact(args, contacts):
@@ -20,24 +20,26 @@ def change_contact(args, contacts):
             contacts[name] = new_phone
             return "Contact updated." 
         else:
-            print ("Перевірте вірність введених даних")
+            return "Перевірте вірність введених даних"
      
 
 def show_phone(args,contacts):
         name = args[0]
         if name in contacts:
-            print (contacts[name])
+            return (contacts[name])
         else: 
-            print ("Користувача з таким іменем не знайдено, перевірте вірність введених даних")
+            return "Користувача з таким іменем не знайдено, перевірте вірність введених даних"
     
 
 def show_all(contacts):
+    result = []
     if contacts:
         for name, phone in contacts.items():
-            print(f"{name}: {phone}")
-            return (contacts)
+            result.append(f"{name}: {phone}")
+        return result
     else:
-        print ("Список контактів порожній")
+        result.append("Список контактів порожній")
+        return result
 
 
 def main():
@@ -58,7 +60,9 @@ def main():
         elif command == "phone":
             print(show_phone(args,contacts))
         elif command == "all":
-            print(show_all(contacts))
+            contact_list = show_all(contacts)
+            for contact in contact_list:
+                 print(contact)
         else:
             print("Invalid command.")
 
