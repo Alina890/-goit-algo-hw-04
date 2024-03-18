@@ -6,12 +6,12 @@ with open(file_cat_path, 'w',encoding= "UTF-8") as fh:
 
 def get_cats_info(path):
     cats_info = []
-    with open(file_cat_path,'r',encoding= "UTF-8") as fh:
+    with open(path,'r',encoding= "UTF-8") as fh:
         for line in fh:
             cat_date = line.strip().split(",")
             cat_info = {"id": cat_date[0], "name": cat_date[1], "age": int(cat_date[2])}
             cats_info.append(cat_info)
     return cats_info
             
-cats_info = get_cats_info("path/to/cats_file.txt")
+cats_info = get_cats_info(file_cat_path)
 print(cats_info)

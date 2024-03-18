@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+from colorama import Fore, Style
 
 def get_structure(directory):
     def get_recursivelly(folder,indent = ""):
