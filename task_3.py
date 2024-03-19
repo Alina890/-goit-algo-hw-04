@@ -13,6 +13,15 @@ def get_structure(directory):
     get_recursivelly(directory)
     return
 
+if len(sys.argv) < 2:
+    print("Введіть шлях до папки")
+else:
+    directory_path = Path(sys.argv[1])
+    if directory_path.exists() and directory_path.is_dir():
+        get_structure(directory_path)
+    else:
+        print("Папка з вказаним ім'ям не існує")
+
 current_directory = Path(".")
 print (get_structure(current_directory))
 
