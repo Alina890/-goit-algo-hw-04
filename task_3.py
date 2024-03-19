@@ -10,7 +10,6 @@ def get_structure(directory):
                 get_recursivelly(item, indent + " ")
             else:
                 print(indent + "📜" + item.name)
-        print("📦" + str(directory))
     get_recursivelly(directory)
     return
 

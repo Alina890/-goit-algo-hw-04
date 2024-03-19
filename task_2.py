@@ -9,7 +9,7 @@ def get_cats_info(path):
     with open(path,'r',encoding= "UTF-8") as fh:
         for line in fh:
             cat_date = line.strip().split(",")
-            cat_info = {"id": cat_date[0], "name": cat_date[1], "age": int(cat_date[2])}
+            cat_info = {"id": cat_date[0], "name": cat_date[1], "age": cat_date[2]}
             cats_info.append(cat_info)
     return cats_info
             
